@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexusRMS — Live Demo | Nexunova</title>
+<meta name="description" content="Explore NexusRMS — Pakistan's #1 Recovery Management System. 43 modules, sample data pre-loaded. No signup required.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#050709;color:rgba(240,244,255,.88);font-family:'Inter',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:58px;background:rgba(5,7,9,.9);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-brand{display:flex;align-items:center;gap:9px;font-family:'Plus Jakarta Sans',sans-serif;font-size:.92rem;font-weight:800;color:#fff}
+.nav-dot{width:7px;height:7px;border-radius:50%;background:#00D4FF;box-shadow:0 0 8px rgba(0,212,255,.8)}
+.nav-links{display:flex;align-items:center;gap:22px;font-size:.8rem;font-weight:500;color:rgba(255,255,255,.45)}
+.nav-links a:hover{color:rgba(255,255,255,.85)}
+.nav-pill{padding:6px 16px;border-radius:8px;background:rgba(0,212,255,.09);border:1px solid rgba(0,212,255,.22);color:#00D4FF;font-size:.78rem;font-weight:600;transition:background .18s,border-color .18s}
+.nav-pill:hover{background:rgba(0,212,255,.17);border-color:rgba(0,212,255,.42)}
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:600px;background:radial-gradient(ellipse at 50% 0%,rgba(0,212,255,.07) 0%,transparent 65%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:5px 14px;border-radius:100px;border:1px solid rgba(0,212,255,.2);background:rgba(0,212,255,.06);font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#00D4FF;margin-bottom:26px}
+.badge-dot{width:6px;height:6px;border-radius:50%;background:#00D4FF;animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;line-height:1.13;letter-spacing:-.03em;color:#fff;max-width:780px;margin:0 auto 18px}
+.grad{background:linear-gradient(135deg,#00D4FF 0%,#7B2FF7 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-sub{font-size:.98rem;color:rgba(255,255,255,.4);max-width:500px;margin:0 auto 38px;line-height:1.75}
+.ctas{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;background:linear-gradient(135deg,#00D4FF,#7B2FF7);color:#050709;font-weight:800;font-size:.88rem;transition:filter .2s,transform .2s;box-shadow:0 8px 32px rgba(0,212,255,.25)}
+.btn-primary:hover{filter:brightness(1.08);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:6px;padding:13px 22px;border-radius:12px;border:1px solid rgba(255,255,255,.11);background:transparent;color:rgba(255,255,255,.6);font-weight:600;font-size:.86rem;transition:border-color .18s,color .18s,background .18s}
+.btn-ghost:hover{border-color:rgba(255,255,255,.26);color:#fff;background:rgba(255,255,255,.04)}
+.hero-note{margin-top:18px;font-size:.68rem;color:rgba(255,255,255,.22);font-family:'JetBrains Mono',monospace;letter-spacing:.5px}
+.info-strip{padding:0 24px 72px;max-width:860px;margin:0 auto}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.info-card{padding:20px;border-radius:13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.025)}
+.info-icon{font-size:20px;margin-bottom:10px}
+.info-title{font-size:.8rem;font-weight:700;color:rgba(240,244,255,.9);margin-bottom:5px}
+.info-text{font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.65}
+.stats{background:rgba(255,255,255,.02);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:26px 24px}
+.stats-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center;padding:0 16px;border-right:1px solid rgba(255,255,255,.07)}
+.stat:last-child{border-right:0}
+.stat-n{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.75rem;font-weight:800;color:#00D4FF;line-height:1;margin-bottom:4px}
+.stat-l{font-size:.68rem;color:rgba(255,255,255,.32);letter-spacing:.2px}
+.sec{padding:72px 24px}
+.sec-inner{max-width:1080px;margin:0 auto}
+.sec-tag{display:block;font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(0,212,255,.55);margin-bottom:10px}
+.sec-h{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.55rem,3vw,2.15rem);font-weight:800;color:#fff;letter-spacing:-.02em;line-height:1.2;margin-bottom:10px}
+.sec-p{font-size:.88rem;color:rgba(255,255,255,.36);max-width:500px;line-height:1.75;margin-bottom:40px}
+.divider{height:1px;background:rgba(255,255,255,.05);max-width:1080px;margin:0 auto}
+.usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.usp{padding:22px 20px;border-radius:13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);transition:border-color .18s,background .18s}
+.usp:hover{border-color:rgba(0,212,255,.17);background:rgba(0,212,255,.025)}
+.usp-ico{font-size:20px;margin-bottom:11px}
+.usp-title{font-size:.82rem;font-weight:700;color:rgba(240,244,255,.92);margin-bottom:6px}
+.usp-body{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.65}
+.usp-num{display:inline-block;margin-top:10px;padding:2px 8px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:.52rem;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.17);color:rgba(0,212,255,.7)}
+.mod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.mod{padding:24px;border-radius:13px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.02);transition:border-color .18s}
+.mod:hover{border-color:rgba(255,255,255,.12)}
+.mod-head{display:flex;align-items:center;gap:12px;margin-bottom:13px}
+.mod-ico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0}
+.mod-name{font-size:.86rem;font-weight:700;color:rgba(240,244,255,.95)}
+.mod-desc{font-size:.71rem;color:rgba(255,255,255,.36);line-height:1.65;margin-bottom:13px}
+.mod-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.mod-list li{display:flex;align-items:flex-start;gap:7px;font-size:.71rem;color:rgba(255,255,255,.52)}
+.mod-list li::before{content:'✓';color:#00D4FF;font-weight:700;flex-shrink:0;margin-top:1px;font-size:.67rem}
+.bottom{text-align:center}
+.bottom h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(1.55rem,3vw,2.3rem);font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:12px}
+.bottom p{font-size:.88rem;color:rgba(255,255,255,.36);margin-bottom:34px}
+footer{padding:28px 24px;border-top:1px solid rgba(255,255,255,.06);text-align:center}
+.foot{font-size:.7rem;color:rgba(255,255,255,.2)}
+.foot a{color:rgba(0,212,255,.45);transition:color .15s}
+.foot a:hover{color:#00D4FF}
+@media(max-width:768px){nav{padding:0 20px}.nav-links{display:none}.info-grid,.usp-grid{grid-template-columns:1fr 1fr}.mod-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr);gap:20px 0}.stat:nth-child(2){border-right:0}.stat:nth-child(3){border-right:1px solid rgba(255,255,255,.07)}}
+@media(max-width:480px){.info-grid,.usp-grid{grid-template-columns:1fr}.stats-inner{grid-template-columns:repeat(2,1fr)}.ctas{flex-direction:column;align-items:stretch;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="./index.html" class="nav-brand"><span class="nav-dot"></span>NexusRMS</a>
+  <div class="nav-links">
+    <a href="./index.html#rms">Features</a>
+    <a href="./index.html#pricing">Pricing</a>
+    <a href="./demo-crm.html">CRM Demo</a>
+    <a href="https://rms.nexunova.com/download.html">Download</a>
+    <a href="https://rms.nexunova.com/signup.html" class="nav-pill">Start Free Trial</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-badge"><span class="badge-dot"></span>NexusRMS &nbsp;&middot;&nbsp; Live Interactive Demo</div>
+  <h1>Pakistan's Most Advanced<br><span class="grad">Recovery Platform</span></h1>
+  <p class="hero-sub">Sample data pre-loaded. All 43 modules unlocked. No signup, no credit card &mdash; just explore.</p>
+  <div class="ctas">
+    <a href="https://rms.nexunova.com/login.html?demo=true" class="btn-primary">🚀 Launch Demo
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="https://rms.nexunova.com/signup.html" class="btn-ghost">Start Free Trial &rarr;</a>
+  </div>
+  <p class="hero-note">DEMO ACCOUNT &nbsp;&middot;&nbsp; SAMPLE DATA &nbsp;&middot;&nbsp; DESTRUCTIVE ACTIONS DISABLED</p>
+</section>
+
+<div class="info-strip">
+  <div class="info-grid">
+    <div class="info-card"><div class="info-icon">🏗️</div><div class="info-title">Real Company, Sample Data</div><div class="info-text">Pre-loaded with Falcon Heights Society &mdash; a fictional real estate company with projects, units, clients, and payment history already set up.</div></div>
+    <div class="info-card"><div class="info-icon">🔓</div><div class="info-title">All 43 Modules Unlocked</div><div class="info-text">Every Pro feature is accessible. Recovery Radar, PDC, Follow-Up Manager, AI Analytics, Ledgers &mdash; explore everything freely.</div></div>
+    <div class="info-card"><div class="info-icon">🛡️</div><div class="info-title">Safe to Explore</div><div class="info-text">Destructive actions (delete, cancel, transfer) are disabled in demo mode. You cannot break anything &mdash; explore with confidence.</div></div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">43+</div><div class="stat-l">Live Modules</div></div>
+    <div class="stat"><div class="stat-n">&#x20A8;1.2B+</div><div class="stat-l">Receivables Tracked</div></div>
+    <div class="stat"><div class="stat-n">40+</div><div class="stat-l">Housing Societies</div></div>
+    <div class="stat"><div class="stat-n">99.9%</div><div class="stat-l">Uptime SLA</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<section class="sec">
+  <div class="sec-inner">
+    <span class="sec-tag">Why NexusRMS</span>
+    <h2 class="sec-h">6 things no other RMS in Pakistan offers</h2>
+    <p class="sec-p">These are the features you will explore in the demo &mdash; built specifically for Pakistani real estate recovery.</p>
+    <div class="usp-grid">
+      <div class="usp"><div class="usp-ico">🎯</div><div class="usp-title">Recovery-First Design</div><div class="usp-body">Every module is built around one goal: collect payments on time. Defaulter detection, follow-up queues, and promise tracking &mdash; all automatic.</div><span class="usp-num">USP 01</span></div>
+      <div class="usp"><div class="usp-ico">💬</div><div class="usp-title">WhatsApp-Native Collections</div><div class="usp-body">Send JazzCash, EasyPaisa, and bank transfer links directly via WhatsApp. Bulk reminders to 100 clients in one click. Delivery tracked.</div><span class="usp-num">USP 02</span></div>
+      <div class="usp"><div class="usp-ico">🧠</div><div class="usp-title">AI Recovery Radar</div><div class="usp-body">Daily AI predictions: who is about to default. 3-tier risk scoring &mdash; High, Medium, Low. Your agents only see the list that matters today.</div><span class="usp-num">USP 03</span></div>
+      <div class="usp"><div class="usp-ico">🔒</div><div class="usp-title">True Multi-Tenancy</div><div class="usp-body">Your data is 100% isolated from every other company. Row-Level Security enforced at the database level &mdash; bank-grade protection.</div><span class="usp-num">USP 04</span></div>
+      <div class="usp"><div class="usp-ico">🖨️</div><div class="usp-title">Professional Print Engine</div><div class="usp-body">Native Windows printing via Electron &mdash; sale agreements, installment schedules, ledgers. One click, pixel-perfect, no browser dialogs.</div><span class="usp-num">USP 05</span></div>
+      <div class="usp"><div class="usp-ico">⚡</div><div class="usp-title">Instant SPA Navigation</div><div class="usp-body">Zero page reloads. Every screen opens in under 1 second &mdash; even on Pakistan's slow internet. Offline capability built in.</div><span class="usp-num">USP 06</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec">
+  <div class="sec-inner">
+    <span class="sec-tag">Explore in the Demo</span>
+    <h2 class="sec-h">4 modules to check first</h2>
+    <p class="sec-p">Start with these when you enter the demo &mdash; they show the platform's biggest strengths clearly.</p>
+    <div class="mod-grid">
+      <div class="mod"><div class="mod-head"><div class="mod-ico" style="background:rgba(0,212,255,.1)">🧠</div><div class="mod-name">Recovery Radar (AI)</div></div><div class="mod-desc">AI-powered daily predictions of which clients are about to default &mdash; before they miss a payment. Proactive recovery, not reactive.</div><ul class="mod-list"><li>3-tier risk scoring: High / Medium / Low</li><li>Daily updated predictions &mdash; fresh every morning</li><li>Agent task list: who to call today</li><li>Accuracy trend tracking over time</li><li>Portfolio risk dashboard for management</li></ul></div>
+      <div class="mod"><div class="mod-head"><div class="mod-ico" style="background:rgba(99,102,241,.1)">💳</div><div class="mod-name">Smart Payments</div></div><div class="mod-desc">All payment methods &mdash; cash, bank transfer, cheque, WhatsApp &mdash; with auto-cascade allocation to the oldest due installment.</div><ul class="mod-list"><li>Cascade auto-allocation or manual override</li><li>Payment proof screenshot upload</li><li>Partial payment support with carry-forward</li><li>Bank-wise tracking and reconciliation</li><li>WhatsApp payment links per installment</li></ul></div>
+      <div class="mod"><div class="mod-head"><div class="mod-ico" style="background:rgba(245,158,11,.1)">📋</div><div class="mod-name">PDC Management</div></div><div class="mod-desc">Complete post-dated cheque register &mdash; from collection to clearance, with auto-alerts before presentation dates.</div><ul class="mod-list"><li>Due-date alerts 7 days before presentation</li><li>Pipeline: Pending &rarr; Presented &rarr; Cleared &rarr; Bounced</li><li>Bank-wise cheque grouping</li><li>Bounced cheque recovery workflow</li><li>Monthly and quarterly PDC reports</li></ul></div>
+      <div class="mod"><div class="mod-head"><div class="mod-ico" style="background:rgba(52,211,153,.1)">📞</div><div class="mod-name">Follow-Up Manager</div></div><div class="mod-desc">8-step call logging wizard &mdash; every client interaction tracked with outcomes, next steps, and full manager oversight.</div><ul class="mod-list"><li>Outcome tagging: Promise / No Answer / Dispute / Paid</li><li>Next contact date scheduling</li><li>Overdue alerts &mdash; calls not made today shown red</li><li>Manager sees team's follow-up activity</li><li>Full history per client &mdash; every call logged</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="sec">
+  <div class="sec-inner bottom">
+    <h2>Ready to use NexusRMS<br>for your company?</h2>
+    <p>Start your 7-day free trial &mdash; no credit card required. Or keep exploring the demo.</p>
+    <div class="ctas">
+      <a href="https://rms.nexunova.com/signup.html?plan=free" class="btn-primary">🚀 Start Free Trial &mdash; 7 Days</a>
+      <a href="https://rms.nexunova.com/login.html?demo=true" class="btn-ghost">Continue in Demo &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="foot">
+    NexusRMS by <a href="./index.html">Nexunova</a>
+    &nbsp;&middot;&nbsp; <a href="mailto:sales@nexunova.com">sales@nexunova.com</a>
+    &nbsp;&middot;&nbsp; <a href="https://wa.me/971556325362" target="_blank" rel="noopener">WhatsApp Sales</a>
+    &nbsp;&middot;&nbsp; <a href="./demo-crm.html">CRM Demo &rarr;</a>
+  </p>
+</footer>
+
+</body>
+</html>

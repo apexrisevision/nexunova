@@ -1,0 +1,19 @@
+# Local tooling
+.claude/
+.vscode/
+.idea/
+
+# OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backups & archives
+*.zip
+*.bak
+*.bak-*
+*.tmp
+
+# Node (if ever added)
+node_modules/
+npm-debug.log*
