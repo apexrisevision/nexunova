@@ -174,71 +174,39 @@ ul, ol { list-style: none; }
 /* Pull tab */
 #priceTab {
   position: fixed; right: 0; top: 50%; transform: translateY(-50%);
-  z-index: 9001; width: 32px; padding: 26px 0;
+  z-index: 9001; width: 30px; padding: 24px 0;
   border: 0; border-radius: 10px 0 0 10px;
-  background: rgba(8,11,24,0.93);
+  background: rgba(9,12,22,0.96);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   cursor: pointer; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 10px;
+  align-items: center; justify-content: center; gap: 9px;
   font-family: 'Inter', sans-serif;
-  transition: width 0.24s cubic-bezier(0.4,0,0.2,1), background 0.2s ease,
+  transition: width 0.2s ease, background 0.2s ease,
               transform 0.42s cubic-bezier(0.32,0.72,0,1), opacity 0.28s ease;
-  box-shadow: -3px 0 20px rgba(0,0,0,0.38), inset 1px 0 0 rgba(255,255,255,0.04);
+  box-shadow: -2px 0 14px rgba(0,0,0,0.35), inset 1px 0 0 rgba(255,255,255,0.04);
 }
 #priceTab::before {
   content: ''; position: absolute; top: 0; bottom: 0; left: 0;
   width: 2px; border-radius: 10px 0 0 10px;
   background: linear-gradient(180deg, #00D4FF 0%, #6366f1 50%, #a855f7 100%);
-  opacity: 0.65;
+  opacity: 0.45; transition: opacity 0.2s;
 }
-#priceTab:hover { width: 36px; background: rgba(12,16,34,0.97); box-shadow: -5px 0 36px rgba(0,212,255,0.14), inset 1px 0 0 rgba(255,255,255,0.07); }
-#priceTab:hover::before { opacity: 1; }
+#priceTab:hover { width: 34px; background: rgba(13,17,30,0.99); box-shadow: -3px 0 22px rgba(0,212,255,0.08), inset 1px 0 0 rgba(255,255,255,0.06); }
+#priceTab:hover::before { opacity: 0.9; }
 #stickyBar.is-open #priceTab { transform: translateY(-50%) translateX(100%); opacity: 0; pointer-events: none; }
 
-/* Subtle breathing — barely there */
-#stickyBar:not(.is-open) #priceTab { animation: tabBreathe 3.5s ease-in-out infinite; }
-@keyframes tabBreathe {
-  0%, 100% { box-shadow: -3px 0 20px rgba(0,0,0,0.38), inset 1px 0 0 rgba(255,255,255,0.04); }
-  50%       { box-shadow: -5px 0 28px rgba(0,212,255,0.16), inset 1px 0 0 rgba(255,255,255,0.07); }
-}
-#stickyBar:not(.is-open) #priceTab:hover { animation: none; }
-
-.pt-icon { color: rgba(0,212,255,0.55); display: flex; flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
-.pt-icon svg { width: 12px; height: 12px; }
-#priceTab:hover .pt-icon { color: #00D4FF; transform: scale(1.1); }
+.pt-icon { color: rgba(0,212,255,0.4); display: flex; flex-shrink: 0; transition: color 0.2s, transform 0.2s; }
+.pt-icon svg { width: 11px; height: 11px; }
+#priceTab:hover .pt-icon { color: rgba(0,212,255,0.85); transform: translateX(-1px); }
 
 .pt-label {
   writing-mode: vertical-rl; text-orientation: mixed; transform: rotate(180deg);
-  font-size: 0.5rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(255,255,255,0.38); transition: color 0.2s; white-space: nowrap; user-select: none;
+  font-size: 0.48rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+  color: rgba(255,255,255,0.28); transition: color 0.2s; white-space: nowrap; user-select: none;
 }
-#priceTab:hover .pt-label { color: rgba(255,255,255,0.78); }
+#priceTab:hover .pt-label { color: rgba(255,255,255,0.65); }
 
-.pt-dot { width: 5px; height: 5px; border-radius: 50%; background: #34d399; flex-shrink: 0; animation: ptPulse 3s ease-in-out infinite; }
-@keyframes ptPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.38; } }
-
-.pt-shimmer { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; pointer-events: none; z-index: 10; }
-.pt-shimmer::after { content: ''; position: absolute; left: 0; right: 0; height: 60%; background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); top: -60%; }
-#priceTab:hover .pt-shimmer::after { animation: ptShimmer 0.55s cubic-bezier(0.4,0,0.2,1) forwards; }
-@keyframes ptShimmer { from { top: -60%; } to { top: 160%; } }
-
-.pt-peek {
-  position: absolute; right: calc(100% + 12px); top: 50%;
-  transform: translateY(-50%) translateX(8px);
-  background: rgba(7,10,22,0.96); backdrop-filter: blur(20px);
-  border: 1px solid rgba(255,255,255,0.08); border-radius: 8px;
-  padding: 7px 12px; white-space: nowrap; font-size: 0.7rem; font-weight: 600;
-  color: rgba(220,235,255,0.72); opacity: 0; pointer-events: none;
-  transition: opacity 0.22s ease, transform 0.26s cubic-bezier(0.32,0.72,0,1);
-  box-shadow: 0 6px 22px rgba(0,0,0,0.38);
-}
-.pt-peek::after {
-  content: ''; position: absolute; right: -5px; top: 50%;
-  transform: translateY(-50%) rotate(45deg); width: 8px; height: 8px;
-  background: rgba(7,10,22,0.96);
-  border-right: 1px solid rgba(255,255,255,0.08); border-top: 1px solid rgba(255,255,255,0.08);
-}
-#priceTab:hover .pt-peek { opacity: 1; transform: translateY(-50%) translateX(0); }
+.pt-dot { width: 4px; height: 4px; border-radius: 50%; background: rgba(52,211,153,0.65); flex-shrink: 0; }
 
 /* Drawer frame */
 #priceDrawer {
@@ -254,7 +222,7 @@ ul, ol { list-style: none; }
 #priceDrawer.is-open { transform: translateX(0); }
 #priceDrawer::before {
   content: ''; display: block; height: 1px;
-  background: linear-gradient(90deg, transparent 0%, #00D4FF 30%, #a855f7 70%, transparent 100%);
+  background: rgba(255,255,255,0.07);
   flex-shrink: 0;
 }
 
@@ -281,30 +249,28 @@ ul, ol { list-style: none; }
 .pd-body::-webkit-scrollbar { width: 3px; }
 .pd-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.07); border-radius: 2px; }
 
-.pd-section { display: block; margin-bottom: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.55rem; letter-spacing: 1.8px; text-transform: uppercase; color: rgba(255,255,255,0.22); }
+.pd-section { display: block; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 
 /* ── 1. PRIMARY: Free Trial cards ── */
 .pd-trial-group { display: flex; flex-direction: column; gap: 7px; }
 .pd-trial-rms, .pd-trial-crm {
   display: flex; align-items: center; gap: 12px;
-  padding: 13px 14px; border-radius: 11px; text-decoration: none;
-  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+  padding: 13px 14px; border-radius: 10px; text-decoration: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
-.pd-trial-rms  { background: rgba(0,212,255,0.07);  border: 1px solid rgba(0,212,255,0.2); }
-.pd-trial-crm  { background: rgba(168,85,247,0.06); border: 1px solid rgba(168,85,247,0.16); }
-.pd-trial-rms:hover  { background: rgba(0,212,255,0.13);  border-color: rgba(0,212,255,0.38);  transform: translateY(-1px); }
-.pd-trial-crm:hover  { background: rgba(168,85,247,0.11); border-color: rgba(168,85,247,0.32); transform: translateY(-1px); }
-.pd-trial-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
-.pd-trial-rms .pd-trial-icon { background: rgba(0,212,255,0.1); }
-.pd-trial-crm .pd-trial-icon { background: rgba(168,85,247,0.1); }
+.pd-trial-rms  { background: rgba(255,255,255,0.03); border: 1px solid rgba(0,212,255,0.22); }
+.pd-trial-crm  { background: rgba(255,255,255,0.03); border: 1px solid rgba(168,85,247,0.18); }
+.pd-trial-rms:hover  { background: rgba(0,212,255,0.07);  border-color: rgba(0,212,255,0.4); }
+.pd-trial-crm:hover  { background: rgba(168,85,247,0.06); border-color: rgba(168,85,247,0.35); }
+.pd-trial-icon { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pd-trial-rms .pd-trial-icon { background: rgba(0,212,255,0.08); color: #00D4FF; }
+.pd-trial-crm .pd-trial-icon { background: rgba(168,85,247,0.08); color: #a855f7; }
 .pd-trial-text { flex: 1; display: flex; flex-direction: column; gap: 2px; }
-.pd-trial-name { font-size: 0.82rem; font-weight: 700; letter-spacing: -0.1px; }
-.pd-trial-rms .pd-trial-name { color: #7dd3fc; }
-.pd-trial-crm .pd-trial-name { color: #d8b4fe; }
+.pd-trial-name { font-size: 0.82rem; font-weight: 600; letter-spacing: -0.1px; color: rgba(240,244,255,0.92); }
 .pd-trial-hint { font-size: 0.66rem; color: rgba(255,255,255,0.32); }
-.pd-trial-arrow { font-size: 0.78rem; color: rgba(255,255,255,0.2); transition: color 0.18s, transform 0.18s; }
-.pd-trial-rms:hover .pd-trial-arrow { color: #7dd3fc; transform: translateX(3px); }
-.pd-trial-crm:hover .pd-trial-arrow { color: #d8b4fe; transform: translateX(3px); }
+.pd-trial-arrow { font-size: 0.78rem; color: rgba(255,255,255,0.2); transition: color 0.15s, transform 0.15s; }
+.pd-trial-rms:hover .pd-trial-arrow { color: rgba(0,212,255,0.7); transform: translateX(3px); }
+.pd-trial-crm:hover .pd-trial-arrow { color: rgba(168,85,247,0.7); transform: translateX(3px); }
 
 /* ── 2. SECONDARY: Live Demo rows ── */
 .pd-demo-group { display: flex; flex-direction: column; gap: 5px; }
@@ -315,11 +281,11 @@ ul, ol { list-style: none; }
   text-decoration: none; font-size: 0.77rem; font-weight: 600;
   transition: background 0.15s, border-color 0.15s;
 }
-.pd-demo-row:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.11); }
-.pd-demo-rms { color: #67e8f9; }
-.pd-demo-crm { color: #c4b5fd; }
-.pd-demo-row svg { width: 9px; height: 9px; flex-shrink: 0; opacity: 0.75; }
-.pd-demo-badge { margin-left: auto; font-size: 0.6rem; font-weight: 400; color: rgba(255,255,255,0.2); }
+.pd-demo-row:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); color: rgba(240,244,255,0.88); }
+.pd-demo-rms { color: rgba(240,244,255,0.65); }
+.pd-demo-crm { color: rgba(240,244,255,0.65); }
+.pd-demo-row svg { width: 9px; height: 9px; flex-shrink: 0; opacity: 0.55; }
+.pd-demo-badge { margin-left: auto; font-size: 0.6rem; font-weight: 400; color: rgba(255,255,255,0.22); padding: 2px 7px; border: 1px solid rgba(255,255,255,0.08); border-radius: 100px; }
 
 /* ── 3. TERTIARY: Pricing Plans ── */
 .pd-plans-group { display: flex; flex-direction: column; gap: 8px; }
@@ -333,11 +299,11 @@ ul, ol { list-style: none; }
   font-size: 0.68rem; font-weight: 600; color: rgba(240,244,255,0.42); cursor: pointer;
   transition: color 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 0.3rem; flex: 1;
 }
-.sb-bill-opt.is-active { color: #050709; }
-.sb-bill-opt:hover:not(.is-active) { color: rgba(240,244,255,0.8); }
-.sb-bill-save { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; padding: 1px 4px; border-radius: 100px; background: rgba(16,185,129,0.16); color: #34d399; font-weight: 700; }
-.sb-bill-opt.is-active .sb-bill-save { background: rgba(5,7,9,0.15); color: #047857; }
-.sb-bill-thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 100px; background: linear-gradient(135deg, #00D4FF, #7B2FF7); transition: transform 0.24s cubic-bezier(0.4,0,0.2,1); z-index: 1; }
+.sb-bill-opt.is-active { color: rgba(240,244,255,0.95); }
+.sb-bill-opt:hover:not(.is-active) { color: rgba(240,244,255,0.7); }
+.sb-bill-save { font-family: 'JetBrains Mono', monospace; font-size: 0.5rem; padding: 1px 5px; border-radius: 100px; background: rgba(16,185,129,0.12); color: #34d399; font-weight: 600; }
+.sb-bill-opt.is-active .sb-bill-save { background: rgba(16,185,129,0.12); color: #34d399; }
+.sb-bill-thumb { position: absolute; top: 3px; bottom: 3px; left: 3px; width: calc(50% - 3px); border-radius: 100px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1); transition: transform 0.24s cubic-bezier(0.4,0,0.2,1); z-index: 1; }
 .sb-billing[data-bill="yearly"] .sb-bill-thumb { transform: translateX(100%); }
 .sb-pills { display: flex; flex-direction: column; gap: 4px; }
 .sb-pill { width: 100%; }
@@ -3524,16 +3490,14 @@ header.site-nav.scrolled {
 <div id="stickyBar">
 
   <!-- Pull tab -->
-  <button type="button" id="priceTab" aria-label="Get started with Nexunova" aria-expanded="false" aria-controls="priceDrawer">
+  <button type="button" id="priceTab" aria-label="View pricing" aria-expanded="false" aria-controls="priceDrawer">
     <span class="pt-icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 3l1.9 5.8a2 2 0 001.3 1.3L21 12l-5.8 1.9a2 2 0 00-1.3 1.3L12 21l-1.9-5.8a2 2 0 00-1.3-1.3L3 12l5.8-1.9a2 2 0 001.3-1.3Z"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 5 5 12 12 19"/>
       </svg>
     </span>
-    <span class="pt-label" aria-hidden="true">START</span>
+    <span class="pt-label" aria-hidden="true">PRICING</span>
     <span class="pt-dot" aria-hidden="true"></span>
-    <span class="pt-shimmer" aria-hidden="true"></span>
-    <span class="pt-peek" aria-hidden="true">Get Started &rarr;</span>
   </button>
 
   <div id="priceBackdrop" aria-hidden="true"></div>
@@ -3555,7 +3519,11 @@ header.site-nav.scrolled {
       <!-- 1. PRIMARY: Free Trial -->
       <div class="pd-trial-group">
         <a href="https://rms.nexunova.com/signup.html?plan=free" target="_blank" rel="noopener" class="pd-trial-rms">
-          <div class="pd-trial-icon">🚀</div>
+          <div class="pd-trial-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17" aria-hidden="true">
+              <rect x="2" y="7" width="6" height="14"/><rect x="9" y="3" width="6" height="18"/><rect x="16" y="10" width="6" height="11"/>
+            </svg>
+          </div>
           <div class="pd-trial-text">
             <span class="pd-trial-name">Start Free &mdash; NexusRMS</span>
             <span class="pd-trial-hint">7 days &middot; No credit card required</span>
@@ -3563,7 +3531,11 @@ header.site-nav.scrolled {
           <span class="pd-trial-arrow">&#x2192;</span>
         </a>
         <a href="https://crm.nexunova.com/signup" target="_blank" rel="noopener" class="pd-trial-crm">
-          <div class="pd-trial-icon">&#x2726;</div>
+          <div class="pd-trial-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="17" height="17" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
           <div class="pd-trial-text">
             <span class="pd-trial-name">Start Free &mdash; NexusCRM</span>
             <span class="pd-trial-hint">Free tier &middot; Field sales platform</span>
