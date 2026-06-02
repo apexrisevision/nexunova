@@ -218,12 +218,12 @@ if (rmsDemoBtn) {
   });
 }
 
-// NexusCRM card "Request Demo"
+// Nexunova CRM card "Request Demo"
 var crmDemoBtn = document.getElementById('crmDemoBtn');
 if (crmDemoBtn) {
   crmDemoBtn.addEventListener('click', function (e) {
     addRipple(e, this);
-    prefillContact('Book a Product Demo', crmDemoBtn.dataset.product || 'NexusCRM — Field Sales');
+    prefillContact('Book a Product Demo', crmDemoBtn.dataset.product || 'Nexunova CRM — Field Sales');
   });
 }
 
