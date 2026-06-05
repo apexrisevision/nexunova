@@ -4,6 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="facebook-domain-verification" content="9k7w7sktlfr56yyo46zwyyxgnuvrc3" />
+
+<!-- ═══ Legacy desktop-app rescue ═══════════════════════════════════════
+     Old Nexunova desktop builds (pre-2026-05-29) land on this marketing page
+     after native login instead of the RMS app. Detect the Electron shell and
+     bounce straight to the real app, flagging it legacy so the app can prompt
+     the user to update. Normal browser visitors (no "Electron" in UA) are
+     never affected; the current desktop build loads login.html directly and
+     never reaches this page automatically. -->
+<script>
+(function(){
+  try{
+    if (/Electron/i.test(navigator.userAgent || '')) {
+      location.replace('https://rms.nexunova.com/login.html?nxn_legacy=1');
+    }
+  }catch(e){}
+})();
+</script>
 <title>Nexunova — Real Estate Recovery &amp; Sales Software for Pakistan, UAE &amp; Gulf</title>
 <meta name="description" content="Stop losing money on overdue installments and untracked field agents. Nexunova RMS recovers your receivables. Nexunova CRM closes your deals. Built for real estate developers across Pakistan, UAE &amp; the Gulf.">
 <link rel="canonical" href="https://www.nexunova.com/">
