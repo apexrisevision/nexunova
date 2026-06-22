@@ -1051,14 +1051,11 @@ footer.site-footer.is-open .footer-bottom { opacity: 1; }
 ═══════════════════════════════════════════════════════════════════════ */
 .hero-products {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   max-width: 1180px;
   margin: 0 auto 2.5rem;
   perspective: 1600px;
-}
-@media (max-width: 1040px) {
-  .hero-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .hero-product {
   --mx: 50%;
@@ -1106,6 +1103,11 @@ footer.site-footer.is-open .footer-bottom { opacity: 1; }
   --prod-color: #34d399;
   --prod-color-2: #10b981;
   --prod-color-rgb: 52,211,153;
+}
+.hero-product-school {
+  --prod-color: #fbbf24;
+  --prod-color-2: #f59e0b;
+  --prod-color-rgb: 245,158,11;
 }
 
 /* ─── Background layers (mesh, grid, spotlight) ─────────────────────── */
@@ -2816,6 +2818,10 @@ header.site-nav.scrolled {
         <span class="spn-dot" aria-hidden="true"></span>Nexunova Attend
       </a>
       <span class="spn-sep" aria-hidden="true"></span>
+      <a href="#school"     class="spn-pill" data-spn="school">
+        <span class="spn-dot" aria-hidden="true"></span>Nexunova School
+      </a>
+      <span class="spn-sep" aria-hidden="true"></span>
       <a href="#how"        class="spn-pill" data-spn="how">
         <span class="spn-dot" aria-hidden="true"></span>How It Works
       </a>
@@ -2850,6 +2856,7 @@ header.site-nav.scrolled {
   <a href="#rms">Nexunova RMS</a>
   <a href="#crm">Nexunova CRM</a>
   <a href="#attend">Nexunova Attend</a>
+  <a href="#school">Nexunova School</a>
   <a href="#how">How It Works</a>
   <a href="#rmsPricing">Pricing</a>
   <a href="#contact">Contact</a>
@@ -3094,6 +3101,74 @@ header.site-nav.scrolled {
             <span class="hp-cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </span>
           <span class="hp-foot-sub">Rs 8,000/mo · 1 month free on yearly</span>
+        </div>
+      </a>
+
+      <!-- ─── Nexunova School card ────────────────────────────────────── -->
+      <a href="https://school.nexunova.com/" target="_blank" rel="noopener" class="hero-product hero-product-school" aria-label="Nexunova School — School Management Platform">
+        <span class="hp-mesh" aria-hidden="true"></span>
+        <span class="hp-grid" aria-hidden="true"></span>
+        <span class="hp-spotlight" aria-hidden="true"></span>
+        <span class="hp-ring" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-1" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-2" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-3" aria-hidden="true"></span>
+
+        <div class="hp-top">
+          <span class="hp-status">
+            <span class="hp-status-dot" aria-hidden="true"></span>
+            <span>New</span>
+          </span>
+          <span class="hp-version">PK &amp; UAE</span>
+        </div>
+
+        <div class="hp-main">
+          <div class="hp-icon-wrap">
+            <span class="hp-icon-ring" aria-hidden="true"></span>
+            <span class="hp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10L12 5 2 10l10 5 10-5z"/>
+                <path d="M6 12v5c0 1 2.7 2.5 6 2.5s6-1.5 6-2.5v-5"/>
+                <path d="M22 10v6"/>
+              </svg>
+            </span>
+          </div>
+          <div class="hp-name-block">
+            <div class="hp-tag">School Management</div>
+            <h3 class="hp-title">Nexunova School</h3>
+            <p class="hp-desc">Admissions, attendance, fees, exams and a parent portal in one platform — so your office runs on data, not registers and WhatsApp groups.</p>
+          </div>
+        </div>
+
+        <div class="hp-kpi" style="--target: 95%;">
+          <div class="hp-kpi-head">
+            <span class="hp-kpi-label">Fees collected this term</span>
+            <span class="hp-kpi-value">95<em>%</em></span>
+          </div>
+          <div class="hp-kpi-bar"><span class="hp-kpi-bar-fill" aria-hidden="true"></span></div>
+          <div class="hp-kpi-foot">
+            <span>Across every branch</span>
+            <span class="hp-kpi-delta">
+              <svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+              Live
+            </span>
+          </div>
+          <div style="font-size:0.56rem;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-top:7px;">Illustrative dashboard preview</div>
+        </div>
+
+        <div class="hp-pills">
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Admissions</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Attendance</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Fees &amp; Invoicing</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Exams &amp; Parent Portal</span>
+        </div>
+
+        <div class="hp-foot">
+          <span class="hp-cta">
+            <span>Explore Nexunova School</span>
+            <span class="hp-cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </span>
+          <span class="hp-foot-sub">Now onboarding pilot schools</span>
         </div>
       </a>
 
@@ -3442,6 +3517,88 @@ header.site-nav.scrolled {
 </section>
 
 <!-- ══════════════════════════════════════════════════════════════════
+     SCHOOL SECTION
+══════════════════════════════════════════════════════════════════ -->
+<section class="product-section" id="school">
+  <div class="container">
+    <div class="product-section-head">
+      <span class="product-section-tag">
+        <span class="product-section-tag-dot"></span>
+        Nexunova School &middot; School Management
+      </span>
+      <h2 class="product-section-title">Run the Whole School From <em>One Screen</em></h2>
+      <p class="product-section-desc">
+        Admissions in one register, fees in a diary, results in a spreadsheet, parents on WhatsApp. Nexunova School pulls it all into a single platform — every record connected, every role with the right view.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+        </div>
+        <h4>Admissions &amp; Student Records</h4>
+        <p>Capture enquiries, process admissions and keep a complete profile for every student — siblings, documents and history all in one place.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 16l2 2 4-4"/></svg>
+        </div>
+        <h4>Attendance</h4>
+        <p>Mark student and staff attendance class by class, see daily and monthly summaries, and spot absentees at a glance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 14h4"/><path d="M15 13.5l1.5 1.5 2.5-2.5"/></svg>
+        </div>
+        <h4>Fees, Invoicing &amp; Payments</h4>
+        <p>Define fee structures, generate invoices in bulk, and record payments with a clear ledger per student — no more fee diary.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h4>Exams &amp; Report Cards</h4>
+        <p>Set up exams, enter marks, and generate printable report cards — consistent, professional, and ready for parents.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Parent Portal</h4>
+        <p>Parents see attendance, fees due, results and announcements for their child — fewer calls to the office, more trust.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+        </div>
+        <h4>Multi-Branch, Roles &amp; Security</h4>
+        <p>Run multiple branches under one account with role-based access for admins, teachers, accountants and parents — each school's data fully isolated.</p>
+      </div>
+    </div>
+
+    <div class="product-ctas">
+      <a href="https://school.nexunova.com" target="_blank" rel="noopener" class="product-cta-primary">
+        Explore Nexunova School
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="product-cta-ghost">
+        Request Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem 1.75rem;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.22);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:1.6px;text-transform:uppercase;color:#fbbf24;margin-bottom:0.4rem;">Nexunova School &middot; Early Access</div>
+        <p style="font-size:0.9rem;color:rgba(240,244,255,0.72);margin:0;">Now onboarding our first pilot schools. Talk to us about setting up your school &mdash; we'll share pricing built around your size.</p>
+      </div>
+      <a href="#contact" class="cta-btn" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.72rem 1.4rem;border-radius:100px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.4);color:#fbbf24;font-size:0.85rem;font-weight:700;white-space:nowrap;text-decoration:none;transition:all 0.2s ease;">Request Early Access &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
      HOW IT WORKS
 ══════════════════════════════════════════════════════════════════ -->
 <section class="how" id="how">
@@ -3536,6 +3693,7 @@ header.site-nav.scrolled {
               <option>Nexunova RMS — Recovery Management</option>
               <option>Nexunova CRM — Field Sales</option>
               <option>Nexunova Attend — Attendance &amp; Payroll</option>
+              <option>Nexunova School — School Management</option>
               <option>Both Nexunova RMS &amp; Nexunova CRM</option>
               <option>Custom solution for a larger team</option>
             </select>
@@ -3834,6 +3992,7 @@ header.site-nav.scrolled {
           <li><a href="https://rms.nexunova.com" target="_blank" rel="noopener">Nexunova RMS</a></li>
           <li><a href="https://crm.nexunova.com" target="_blank" rel="noopener">Nexunova CRM</a></li>
           <li><a href="https://attend.nexunova.com" target="_blank" rel="noopener">Nexunova Attend</a></li>
+          <li><a href="https://school.nexunova.com" target="_blank" rel="noopener">Nexunova School</a></li>
           <li><a href="#rms">Pricing</a></li>
           <li><a href="./demo-rms.html">RMS Live Demo</a></li>
           <li><a href="./demo-crm.html">CRM Live Demo</a></li>
