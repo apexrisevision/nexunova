@@ -1051,11 +1051,14 @@ footer.site-footer.is-open .footer-bottom { opacity: 1; }
 ═══════════════════════════════════════════════════════════════════════ */
 .hero-products {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
   max-width: 1180px;
   margin: 0 auto 2.5rem;
   perspective: 1600px;
+}
+@media (max-width: 1040px) {
+  .hero-products { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .hero-product {
   --mx: 50%;
@@ -1098,6 +1101,11 @@ footer.site-footer.is-open .footer-bottom { opacity: 1; }
   --prod-color: #A855F7;
   --prod-color-2: #7C3AED;
   --prod-color-rgb: 168,85,247;
+}
+.hero-product-attend {
+  --prod-color: #34d399;
+  --prod-color-2: #10b981;
+  --prod-color-rgb: 52,211,153;
 }
 
 /* ─── Background layers (mesh, grid, spotlight) ─────────────────────── */
@@ -2804,6 +2812,10 @@ header.site-nav.scrolled {
         <span class="spn-dot" aria-hidden="true"></span>Nexunova CRM
       </a>
       <span class="spn-sep" aria-hidden="true"></span>
+      <a href="#attend"     class="spn-pill" data-spn="attend">
+        <span class="spn-dot" aria-hidden="true"></span>Nexunova Attend
+      </a>
+      <span class="spn-sep" aria-hidden="true"></span>
       <a href="#how"        class="spn-pill" data-spn="how">
         <span class="spn-dot" aria-hidden="true"></span>How It Works
       </a>
@@ -2837,6 +2849,7 @@ header.site-nav.scrolled {
 <div class="nav-mobile-panel" id="navMobilePanel">
   <a href="#rms">Nexunova RMS</a>
   <a href="#crm">Nexunova CRM</a>
+  <a href="#attend">Nexunova Attend</a>
   <a href="#how">How It Works</a>
   <a href="#rmsPricing">Pricing</a>
   <a href="#contact">Contact</a>
@@ -3012,6 +3025,75 @@ header.site-nav.scrolled {
             <span class="hp-cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </span>
           <span class="hp-foot-sub">Free 7-day trial · No card required</span>
+        </div>
+      </a>
+
+      <!-- ─── Nexunova Attend card ────────────────────────────────────── -->
+      <a href="https://attend.nexunova.com/" target="_blank" rel="noopener" class="hero-product hero-product-attend" aria-label="Open Nexunova Attend — Attendance & Payroll Platform">
+        <span class="hp-mesh" aria-hidden="true"></span>
+        <span class="hp-grid" aria-hidden="true"></span>
+        <span class="hp-spotlight" aria-hidden="true"></span>
+        <span class="hp-ring" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-1" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-2" aria-hidden="true"></span>
+        <span class="hp-particle hp-particle-3" aria-hidden="true"></span>
+
+        <div class="hp-top">
+          <span class="hp-status">
+            <span class="hp-status-dot" aria-hidden="true"></span>
+            <span>Live</span>
+          </span>
+          <span class="hp-version">PK &amp; UAE</span>
+        </div>
+
+        <div class="hp-main">
+          <div class="hp-icon-wrap">
+            <span class="hp-icon-ring" aria-hidden="true"></span>
+            <span class="hp-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 11v3"/>
+                <path d="M7 12a5 5 0 0 1 10 0v2.5"/>
+                <path d="M4.5 11.5a7.5 7.5 0 0 1 15 0v2a9 9 0 0 1-.6 3.2"/>
+                <path d="M9.3 19.6A12 12 0 0 1 9 14.5a3 3 0 0 1 6 0v1"/>
+              </svg>
+            </span>
+          </div>
+          <div class="hp-name-block">
+            <div class="hp-tag">Attendance &amp; Payroll</div>
+            <h3 class="hp-title">Nexunova Attend</h3>
+            <p class="hp-desc">Your ZKTeco biometric device syncs to the cloud automatically — attendance, overtime and leave track themselves, then payroll runs at month-end.</p>
+          </div>
+        </div>
+
+        <div class="hp-kpi" style="--target: 98%;">
+          <div class="hp-kpi-head">
+            <span class="hp-kpi-label">Attendance captured today</span>
+            <span class="hp-kpi-value">98<em>%</em></span>
+          </div>
+          <div class="hp-kpi-bar"><span class="hp-kpi-bar-fill" aria-hidden="true"></span></div>
+          <div class="hp-kpi-foot">
+            <span>Synced across all devices</span>
+            <span class="hp-kpi-delta">
+              <svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+              Auto
+            </span>
+          </div>
+          <div style="font-size:0.56rem;letter-spacing:0.8px;text-transform:uppercase;color:rgba(255,255,255,0.32);margin-top:7px;">Illustrative dashboard preview</div>
+        </div>
+
+        <div class="hp-pills">
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Biometric Sync</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Auto Overtime</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Leave &amp; Holidays</span>
+          <span class="hp-pill"><span class="hp-pill-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Payroll &amp; Payslips</span>
+        </div>
+
+        <div class="hp-foot">
+          <span class="hp-cta">
+            <span>Launch Nexunova Attend</span>
+            <span class="hp-cta-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+          </span>
+          <span class="hp-foot-sub">Rs 8,000/mo · 1 month free on yearly</span>
         </div>
       </a>
 
@@ -3278,6 +3360,88 @@ header.site-nav.scrolled {
 </section>
 
 <!-- ══════════════════════════════════════════════════════════════════
+     ATTEND SECTION
+══════════════════════════════════════════════════════════════════ -->
+<section class="product-section" id="attend">
+  <div class="container">
+    <div class="product-section-head">
+      <span class="product-section-tag">
+        <span class="product-section-tag-dot"></span>
+        Nexunova Attend &middot; Attendance &amp; Payroll
+      </span>
+      <h2 class="product-section-title">From the First Punch to the <em>Payslip</em></h2>
+      <p class="product-section-desc">
+        Still running attendance on a register and payroll on a spreadsheet? Nexunova Attend connects your ZKTeco biometric device to the cloud — attendance, overtime and leave track themselves, and payroll runs at month-end.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M9 22v-3h6v3"/><circle cx="12" cy="10" r="2"/></svg>
+        </div>
+        <h4>Biometric Device → Cloud</h4>
+        <p>Your ZKTeco device pushes every punch straight to the cloud over the ADMS protocol. No USB exports, no manual registers — punches appear as they happen.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.2-8.6"/><path d="M21 4v5h-5"/></svg>
+        </div>
+        <h4>Self-Healing Sync</h4>
+        <p>If a device loses power or internet, Nexunova Attend automatically pulls the buffered punches the moment it reconnects. You never lose a day of attendance.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </div>
+        <h4>Late &amp; Overtime, Automatic</h4>
+        <p>Daily and monthly views compute late arrivals and overtime against each employee's shift — no manual maths, no arguments at salary time.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        </div>
+        <h4>Leave, Holidays &amp; Weekends</h4>
+        <p>Weekends, public holidays and approved paid leave are excluded from absences and payroll automatically — so deductions are always fair and correct.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M7 14h4"/><path d="M15 13.5l1.5 1.5 2.5-2.5"/></svg>
+        </div>
+        <h4>Payroll &amp; Payslips</h4>
+        <p>Run monthly payroll with itemised allowances and deductions, then print or PDF a salary slip for every employee. Clear draft → finalized → paid lifecycle.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h4>Multi-Device &amp; Multi-Branch</h4>
+        <p>Run a fleet of devices across branches, pull historical data on demand, and keep every company's data isolated with row-level security at the database.</p>
+      </div>
+    </div>
+
+    <div class="product-ctas">
+      <a href="https://attend.nexunova.com" target="_blank" rel="noopener" class="product-cta-primary">
+        Launch Nexunova Attend
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#contact" class="product-cta-ghost">
+        Request Demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+    <div style="margin-top:2.5rem;padding:1.5rem 1.75rem;background:rgba(16,185,129,0.06);border:1px solid rgba(16,185,129,0.22);border-radius:var(--radius-lg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:0.6rem;letter-spacing:1.6px;text-transform:uppercase;color:var(--green-light);margin-bottom:0.4rem;">Nexunova Attend &middot; Pricing</div>
+        <p style="font-size:0.9rem;color:rgba(240,244,255,0.72);margin:0;">One simple plan &mdash; <strong>Rs 8,000/month</strong> or <strong>Rs 88,000/year</strong> (one month free). Unlimited employees and devices. Pay via bank transfer, JazzCash or EasyPaisa.</p>
+      </div>
+      <a href="https://attend.nexunova.com" target="_blank" rel="noopener" class="cta-btn" style="display:inline-flex;align-items:center;gap:0.5rem;padding:0.72rem 1.4rem;border-radius:100px;background:rgba(16,185,129,0.12);border:1px solid rgba(16,185,129,0.4);color:var(--green-light);font-size:0.85rem;font-weight:700;white-space:nowrap;text-decoration:none;transition:all 0.2s ease;">Get Started &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
      HOW IT WORKS
 ══════════════════════════════════════════════════════════════════ -->
 <section class="how" id="how">
@@ -3371,6 +3535,7 @@ header.site-nav.scrolled {
               <option value="">Select a product</option>
               <option>Nexunova RMS — Recovery Management</option>
               <option>Nexunova CRM — Field Sales</option>
+              <option>Nexunova Attend — Attendance &amp; Payroll</option>
               <option>Both Nexunova RMS &amp; Nexunova CRM</option>
               <option>Custom solution for a larger team</option>
             </select>
@@ -3668,6 +3833,7 @@ header.site-nav.scrolled {
         <ul>
           <li><a href="https://rms.nexunova.com" target="_blank" rel="noopener">Nexunova RMS</a></li>
           <li><a href="https://crm.nexunova.com" target="_blank" rel="noopener">Nexunova CRM</a></li>
+          <li><a href="https://attend.nexunova.com" target="_blank" rel="noopener">Nexunova Attend</a></li>
           <li><a href="#rms">Pricing</a></li>
           <li><a href="./demo-rms.html">RMS Live Demo</a></li>
           <li><a href="./demo-crm.html">CRM Live Demo</a></li>
