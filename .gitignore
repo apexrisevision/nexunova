@@ -17,3 +17,6 @@ desktop.ini
 # Node (if ever added)
 node_modules/
 npm-debug.log*
+
+# Distributables — serve installers from GitHub Releases / rms., not the repo
+*.exe
