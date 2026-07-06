@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<script>
+(function(){ try{ if(/Electron/i.test(navigator.userAgent||'')){ location.replace('https://rms.nexunova.com/login.html?nxn_legacy=1'); } }catch(e){} })();
+</script>
+
+<title>Nexunova RMS — Recovery &amp; Sales for Real Estate Developers</title>
+<meta name="description" content="Nexunova RMS turns overdue installments into collected cash. Recovery Radar, a sales pipeline your reps actually use, NexuBrief morning intelligence and a director's Command Center — one system for property developers.">
+<link rel="canonical" href="https://nexunova.com/rms">
+<meta property="og:title" content="Nexunova RMS — Recovery &amp; Sales for Real Estate Developers">
+<meta property="og:description" content="Turn overdue installments into collected cash. Recovery, sales pipeline, NexuBrief and Command Center — one system.">
+<meta property="og:url" content="https://nexunova.com/rms">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════ Nexunova dark brand system (matches home) ═══════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:84px;font-size:16px}
+:root{
+  --bg:#080B14; --bg1:#0A0E1A; --card:#0F1520; --card2:#131A28;
+  --border:rgba(255,255,255,.07); --border2:rgba(255,255,255,.13);
+  --white:#fff; --dim:rgba(240,244,255,.74); --muted:rgba(240,244,255,.5); --faint:rgba(240,244,255,.32);
+  --cyan:#00D4FF; --cyan2:#0EA5E9; --purple:#7C3AED; --purple2:#a855f7;
+  --grad:linear-gradient(135deg,#00D4FF 0%,#7C3AED 100%);
+  --font-d:'Outfit',sans-serif; --font-b:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+  --sh:0 24px 60px rgba(0,0,0,.5);
+  --maxw:1160px; --t:.28s cubic-bezier(.22,1,.36,1);
+}
+body{font-family:var(--font-b);background:var(--bg);color:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+::selection{background:rgba(0,212,255,.25);color:#fff}
+.container{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.skip{position:absolute;left:-999px;top:0;background:var(--cyan);color:#050709;padding:10px 16px;border-radius:0 0 8px 0;z-index:200;font-weight:700}
+.skip:focus{left:0}
+.eyebrow{font-family:var(--mono);font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--cyan)}
+h1,h2,h3{font-family:var(--font-d);letter-spacing:-.02em;line-height:1.1;color:var(--white);font-weight:800}
+.h-hero{font-size:clamp(2.2rem,4.6vw,3.4rem);line-height:1.04;letter-spacing:-.03em;font-weight:900}
+.h2{font-size:clamp(1.7rem,3vw,2.3rem)}
+.lead{font-size:clamp(1.05rem,1.6vw,1.2rem);color:var(--dim);line-height:1.6}
+em{font-style:normal;background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-size:1rem;font-weight:700;line-height:1;padding:14px 26px;border-radius:100px;border:1px solid transparent;cursor:pointer;transition:transform var(--t),box-shadow var(--t),background var(--t),border-color var(--t);white-space:nowrap}
+.btn svg{width:16px;height:16px}
+.btn-primary{background:var(--grad);color:#050709;box-shadow:0 12px 36px rgba(0,212,255,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 20px 48px rgba(0,212,255,.5)}
+.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.2)}
+.btn-ghost:hover{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.45);transform:translateY(-1px)}
+.btn-sm{padding:10px 18px;font-size:.9rem}
+.chip{width:46px;height:46px;border-radius:12px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.22);color:var(--cyan);display:grid;place-items:center;flex:none}
+.chip svg{width:22px;height:22px}
+
+/* header / footer */
+.hdr{position:sticky;top:0;z-index:100;background:rgba(8,11,20,.72);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid transparent;transition:border-color .2s,background .2s}
+.hdr.scrolled{border-color:var(--border);background:rgba(8,11,20,.9)}
+.hdr-in{display:flex;align-items:center;gap:24px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+.brand-mark{width:30px;height:30px;border-radius:8px;background:var(--grad);color:#050709;display:grid;place-items:center;font-weight:900;font-size:1rem}
+.nav{display:flex;align-items:center;gap:4px;margin-left:8px}
+.nav a{padding:8px 12px;border-radius:8px;font-size:.92rem;font-weight:500;color:var(--dim);transition:background .14s,color .14s}
+.nav a:hover{background:rgba(255,255,255,.05);color:var(--white)}
+.nav a.active{color:var(--cyan)}
+.hdr-cta{display:flex;align-items:center;gap:10px;margin-left:auto}
+.hdr-cta .signin{font-size:.92rem;font-weight:600;color:var(--dim);padding:8px 10px}
+.hdr-cta .signin:hover{color:var(--cyan)}
+.burger{display:none;width:42px;height:42px;border:1px solid var(--border2);border-radius:10px;background:transparent;place-items:center;cursor:pointer}
+.burger svg{width:22px;height:22px;color:var(--white)}
+.mobile-nav{display:none;border-top:1px solid var(--border);background:var(--bg1);padding:12px 24px 20px}
+.mobile-nav a{display:block;padding:12px 8px;font-weight:600;color:var(--dim);border-bottom:1px solid var(--border)}
+.mobile-nav .btn{width:100%;justify-content:center;margin-top:12px}
+.hdr.open .mobile-nav{display:block}
+.ft{border-top:1px solid var(--border);background:var(--bg1);padding:56px 0 28px}
+.ft-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px;margin-bottom:40px}
+.ft-brand .brand{margin-bottom:14px}
+.ft-brand p{font-size:.9rem;color:var(--muted);max-width:32ch}
+.ft-col h4{font-family:var(--mono);font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.ft-col a{display:block;font-size:.92rem;color:var(--dim);padding:5px 0}
+.ft-col a:hover{color:var(--cyan)}
+.ft-bot{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap}
+.ft-bot p{font-size:.84rem;color:var(--muted)}
+.ft-bot a{font-size:.84rem;color:var(--dim);font-weight:600}
+.ft-bot a:hover{color:var(--cyan)}
+
+/* hero */
+.rhero{padding:64px 0 44px;position:relative;overflow:hidden}
+.rhero::before{content:"";position:absolute;top:-140px;right:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(0,212,255,.14),transparent 62%);pointer-events:none}
+.rhero::after{content:"";position:absolute;top:40px;left:-160px;width:460px;height:460px;background:radial-gradient(circle,rgba(124,58,237,.14),transparent 62%);pointer-events:none}
+.rhero .container{position:relative}
+.rhero .eyebrow{display:inline-block;margin-bottom:16px}
+.rhero h1{max-width:17ch;margin-bottom:18px}
+.rhero .lead{max-width:56ch;margin-bottom:26px}
+.rhero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+
+/* screenshot slot / frame (dark) */
+.shot{border-radius:14px;border:1px solid var(--border);box-shadow:var(--sh);overflow:hidden;background:var(--card)}
+.shot-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border);background:var(--bg1)}
+.shot-bar .d{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
+.shot-bar .t{margin-left:6px;font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--muted)}
+.shot-ph{aspect-ratio:16/10;display:grid;place-content:center;justify-items:center;gap:9px;text-align:center;padding:24px;background:linear-gradient(135deg,#0A0E1A,#131A28)}
+.shot-ph svg{width:34px;height:34px;color:var(--cyan);opacity:.7}
+.shot-ph .lbl{font-family:var(--font-d);font-size:.95rem;font-weight:700;color:var(--white)}
+.shot-ph .meta{font-size:.78rem;color:var(--muted)}
+.shot-ph .file{font-family:var(--mono);font-size:.7rem;color:var(--faint);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:3px 8px;margin-top:2px}
+.shot-img{width:100%;height:auto;display:block}
+
+/* alternating feature rows */
+.frow{padding:76px 0;border-top:1px solid var(--border)}
+.frow .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:center}
+.frow.rev .grid{grid-template-columns:1.05fr 1fr}
+.frow.rev .fr-copy{order:2}
+.frow .eyebrow{display:inline-block;margin-bottom:14px}
+.frow h2{margin-bottom:14px}
+.frow p{color:var(--dim);font-size:1.05rem;margin-bottom:20px;max-width:48ch}
+.fr-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+.fr-list li{display:flex;gap:11px;font-size:.98rem;color:var(--dim)}
+.fr-list li svg{width:19px;height:19px;flex:none;margin-top:3px;color:var(--cyan)}
+.shot-duo{display:grid;grid-template-columns:1fr;gap:16px}
+
+/* nexubrief flagship */
+.nb{background:linear-gradient(180deg,#0B1020,#0A0E1A);padding:84px 0;border-top:1px solid var(--border);position:relative;overflow:hidden}
+.nb::before{content:"";position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:640px;height:340px;background:radial-gradient(circle,rgba(124,58,237,.16),transparent 65%);pointer-events:none}
+.nb .container{position:relative}
+.nb .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:48px;align-items:center}
+.nb .eyebrow{color:var(--purple2)}
+.nb h2{margin:14px 0 16px}
+.nb p{color:var(--dim);font-size:1.08rem;margin-bottom:20px;max-width:46ch}
+.nb .fr-list li svg{color:var(--purple2)}
+
+/* mobile strip */
+.mob{padding:80px 0;border-top:1px solid var(--border)}
+.mob .head{text-align:center;max-width:640px;margin:0 auto 44px}
+.mob .head h2{margin:12px 0 12px}
+.mob-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:760px;margin:0 auto}
+.mshot{border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--sh);background:var(--card)}
+.mshot .shot-ph{aspect-ratio:9/19}
+
+/* security strip */
+.sec{padding:88px 0;border-top:1px solid var(--border)}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head .eyebrow{display:inline-block;margin-bottom:14px}
+.sec-head h2{margin-bottom:12px}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.tcard{border:1px solid var(--border);border-radius:16px;padding:24px;background:var(--card);transition:border-color var(--t),transform var(--t)}
+.tcard:hover{border-color:rgba(0,212,255,.3);transform:translateY(-2px)}
+.tcard .chip{margin-bottom:14px}
+.tcard h3{font-size:1.02rem;margin-bottom:6px}
+.tcard p{font-size:.9rem;color:var(--muted)}
+
+/* pricing summary + cta */
+.psum{padding:76px 0;border-top:1px solid var(--border)}
+.psum-box{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;background:var(--card);border:1px solid var(--border);border-radius:22px;padding:34px 40px}
+.psum-box h2{font-size:1.5rem;margin-bottom:6px}
+.psum-box p{color:var(--muted);font-size:.98rem}
+.psum-box .amt{background:var(--grad);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
+.psum-cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta{padding:88px 0}
+.cta-box{position:relative;overflow:hidden;background:linear-gradient(135deg,#0F1520,#131A28);border:1px solid var(--border2);border-radius:24px;padding:56px;text-align:center}
+.cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 0%,rgba(0,212,255,.14),transparent 60%);pointer-events:none}
+.cta-box>*{position:relative}
+.cta-box h2{margin-bottom:12px}
+.cta-box p{color:var(--dim);font-size:1.08rem;margin:0 auto 26px;max-width:48ch}
+
+@media(max-width:960px){
+  .frow .grid,.frow.rev .grid,.nb .grid{grid-template-columns:1fr;gap:32px}
+  .frow.rev .fr-copy{order:0}
+  .trust{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .nav,.hdr-cta .signin,.hdr-cta .btn{display:none}
+  .burger{display:grid}
+  .frow,.nb,.mob,.sec,.psum{padding:56px 0}
+  .cta-box{padding:34px 24px}
+  .psum-box{padding:26px 24px}
+  .mob-row{grid-template-columns:1fr;max-width:280px}
+}
+@media(max-width:520px){ .trust,.ft-grid{grid-template-columns:1fr} }
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<!-- ═══ HEADER ═══ -->
+<header class="hdr" id="hdr">
+  <div class="container">
+    <div class="hdr-in">
+      <a href="/" class="brand" aria-label="Nexunova home"><span class="brand-mark">N</span>Nexunova</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="./rms.html" class="active">Nexunova RMS</a>
+        <a href="/#crm">Products</a>
+        <a href="/#rmsPricing">Pricing</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="hdr-cta">
+        <a href="https://rms.nexunova.com/login.html" class="signin">Sign in</a>
+        <a href="/#contact" class="btn btn-primary btn-sm">Book a demo</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="./rms.html">Nexunova RMS</a>
+    <a href="/#crm">Products</a>
+    <a href="/#rmsPricing">Pricing</a>
+    <a href="/#contact">Contact</a>
+    <a href="https://rms.nexunova.com/login.html">Sign in</a>
+    <a href="/#contact" class="btn btn-primary">Book a demo</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ═══ HERO ═══ -->
+<section class="rhero">
+  <div class="container">
+    <span class="eyebrow">Nexunova RMS · Recovery Management</span>
+    <h1 class="h-hero">Every buyer, every due date, every rupee — <em>under control</em>.</h1>
+    <p class="lead">Nexunova RMS is the system that makes overdue installments impossible to ignore. Recovery, payments, inventory and a field-sales CRM in one place — so your team collects more, and you always know where the business stands.</p>
+    <div class="rhero-cta">
+      <a href="/#contact" class="btn btn-primary">Book a demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <a href="https://rms.nexunova.com/signup.html?plan=free" class="btn btn-ghost" target="_blank" rel="noopener">Start free trial</a>
+    </div>
+    <!-- SHOT SLOT → marketing_shots/rms-dashboard-light.png (1440×900 @2x) -->
+    <figure class="shot">
+      <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Nexunova RMS — Dashboard</span></div>
+      <div class="shot-ph" data-shot="rms-dashboard-light.png">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
+        <span class="lbl">RMS Dashboard</span><span class="meta">Real product screenshot</span><span class="file">rms-dashboard-light.png</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ═══ RECOVERY ═══ -->
+<section class="frow" id="recovery">
+  <div class="container">
+    <div class="grid">
+      <div class="fr-copy">
+        <span class="eyebrow">Recovery</span>
+        <h2 class="h2">See exactly who owes what — the moment you log in.</h2>
+        <p>Recovery Radar puts your entire portfolio in front of you: total outstanding, who's overdue, by how much, and since when. Drill from the whole company down to a single buyer in two clicks.</p>
+        <ul class="fr-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Live outstanding, overdue and recovery-rate at a glance</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aging buckets — 30 / 60 / 90+ days late</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Numbered receipt vouchers for every payment</li>
+        </ul>
+      </div>
+      <div class="shot-duo">
+        <!-- SHOT SLOT → marketing_shots/recovery-light.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Recovery</span></div>
+          <div class="shot-ph" data-shot="recovery-light.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            <span class="lbl">Recovery view</span><span class="meta">Real product screenshot</span><span class="file">recovery-light.png</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SALES PIPELINE & CRM ═══ -->
+<section class="frow rev" id="pipeline">
+  <div class="container">
+    <div class="grid">
+      <div class="fr-copy">
+        <span class="eyebrow">Sales Pipeline &amp; CRM</span>
+        <h2 class="h2">From ad-click to booking, nothing slips.</h2>
+        <p>Every lead lands in a Lead → Deal → Pipeline your reps actually update. Follow-ups that resurface until they're done, field activity you can see, and Facebook / WhatsApp / website leads flowing in automatically.</p>
+        <ul class="fr-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Stage-based pipeline with per-rep ownership</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Auto-captured leads from Facebook, WhatsApp &amp; web</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Follow-ups and promises that never fall through</li>
+        </ul>
+      </div>
+      <div class="shot-duo">
+        <!-- SHOT SLOT → marketing_shots/pipeline-light.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Leads — Pipeline</span></div>
+          <div class="shot-ph" data-shot="pipeline-light.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+            <span class="lbl">Leads pipeline</span><span class="meta">Real product screenshot</span><span class="file">pipeline-light.png</span>
+          </div>
+        </figure>
+        <!-- SHOT SLOT → marketing_shots/lead-detail-light.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Lead detail</span></div>
+          <div class="shot-ph" data-shot="lead-detail-light.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
+            <span class="lbl">Lead detail</span><span class="meta">Real product screenshot</span><span class="file">lead-detail-light.png</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEXUBRIEF (flagship) ═══ -->
+<section class="nb" id="nexubrief">
+  <div class="container">
+    <div class="grid">
+      <div>
+        <span class="eyebrow">NexuBrief</span>
+        <h2 class="h2">Know your company's pulse every morning at 9 AM.</h2>
+        <p>While you're getting ready, Nexunova reads your whole operation and writes you a plain-English briefing — what got collected, what's slipping, who to chase, and where sales stand. Delivered to your phone before your first chai.</p>
+        <ul class="fr-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Yesterday's collections and today's priorities</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Broken promises and biggest overdue accounts, ranked</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>New leads and hot deals waiting for a call</li>
+        </ul>
+      </div>
+      <div>
+        <!-- SHOT SLOT → marketing_shots/nexubrief-dark.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">NexuBrief — Morning Brief</span></div>
+          <div class="shot-ph" data-shot="nexubrief-dark.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M4.93 10.93l1.41 1.41M2 18h2M20 18h2M17.66 12.34l1.41-1.41M22 22H2M16 18a4 4 0 0 0-8 0"/></svg>
+            <span class="lbl">NexuBrief message</span><span class="meta">Real product screenshot</span><span class="file">nexubrief-dark.png</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMAND CENTER ═══ -->
+<section class="frow" id="command">
+  <div class="container">
+    <div class="grid">
+      <div class="fr-copy">
+        <span class="eyebrow">Command Center</span>
+        <h2 class="h2">The director's cockpit for the whole company.</h2>
+        <p>Live collections, team performance, portfolio health and the day's most urgent accounts — one screen built for the person who has to answer for the numbers. Lead from data, not hunches.</p>
+        <ul class="fr-list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Company-wide collections and recovery trend</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Team performance and who to call today</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Announcements pushed straight to your team</li>
+        </ul>
+      </div>
+      <div class="shot-duo">
+        <!-- SHOT SLOT → marketing_shots/command-center-light.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Command Center</span></div>
+          <div class="shot-ph" data-shot="command-center-light.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10h-10z"/><path d="M12 2v10l6.5 6.5"/></svg>
+            <span class="lbl">Command Center</span><span class="meta">Real product screenshot</span><span class="file">command-center-light.png</span>
+          </div>
+        </figure>
+        <!-- SHOT SLOT → marketing_shots/announcements-light.png -->
+        <figure class="shot">
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Announcements</span></div>
+          <div class="shot-ph" data-shot="announcements-light.png">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
+            <span class="lbl">Announcements</span><span class="meta">Real product screenshot</span><span class="file">announcements-light.png</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MOBILE ═══ -->
+<section class="mob" id="mobile">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">On the ground</span>
+      <h2 class="h2">Your whole operation, in your pocket.</h2>
+      <p class="lead">Reps log leads and payments from the field. Directors read NexuBrief on the move. The availability board is a tap away.</p>
+    </div>
+    <div class="mob-row">
+      <!-- SHOT SLOTS → marketing_shots/mobile-1.png / mobile-2.png / mobile-3.png -->
+      <figure class="mshot"><div class="shot-ph" data-shot="mobile-1.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-1.png</span></div></figure>
+      <figure class="mshot"><div class="shot-ph" data-shot="mobile-2.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-2.png</span></div></figure>
+      <figure class="mshot"><div class="shot-ph" data-shot="mobile-3.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-3.png</span></div></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECURITY / TRUST ═══ -->
+<section class="sec" id="security">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Security &amp; trust</span>
+      <h2 class="h2">Your data, protected by design.</h2>
+      <p class="lead">Nexunova is multi-tenant from the ground up. The protections below are built into the platform — not add-ons.</p>
+    </div>
+    <div class="trust">
+      <div class="tcard">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Row-Level Security</h3>
+        <p>Every table enforces tenant isolation at the database level, so one company can never see another's data.</p>
+      </div>
+      <div class="tcard">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
+        <h3>Full audit trail</h3>
+        <p>Every consequential action is written to an immutable audit log — who did what, and when.</p>
+      </div>
+      <div class="tcard">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Role-based access</h3>
+        <p>Directors, managers, reps and operators each see only what their role should — nothing more.</p>
+      </div>
+      <div class="tcard">
+        <div class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Secure sign-in</h3>
+        <p>Hashed credentials, session controls and PIN-based access for field staff keep accounts locked down.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRICING SUMMARY ═══ -->
+<section class="psum">
+  <div class="container">
+    <div class="psum-box">
+      <div>
+        <h2>Plans from <span class="amt">PKR 10,000/mo</span></h2>
+        <p>Free 7-day trial · Basic, Pro and Ultimate tiers · save 10% yearly.</p>
+      </div>
+      <div class="psum-cta">
+        <a href="/#rmsPricing" class="btn btn-ghost">See full pricing</a>
+        <a href="https://rms.nexunova.com/signup.html?plan=free" target="_blank" rel="noopener" class="btn btn-primary">Start free trial</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA ═══ -->
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <h2 class="h2">See Nexunova RMS on your own numbers.</h2>
+      <p>Book a live walkthrough — we'll set it up around your projects and your market. Our team replies the same business day.</p>
+      <a href="/#contact" class="btn btn-primary">Book a demo
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="ft">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="brand"><span class="brand-mark">N</span>Nexunova</a>
+        <p>Recovery and sales software for property developers and institutions across Pakistan, the Gulf, UK &amp; USA.</p>
+      </div>
+      <div class="ft-col"><h4>Products</h4>
+        <a href="./rms.html">Nexunova RMS</a>
+        <a href="https://attend.nexunova.com" target="_blank" rel="noopener">Nexunova Attend</a>
+        <a href="https://school.nexunova.com" target="_blank" rel="noopener">Nexunova School</a>
+      </div>
+      <div class="ft-col"><h4>Company</h4>
+        <a href="/#rmsPricing">Pricing</a>
+        <a href="/#contact">Contact</a>
+        <a href="./privacy.html">Privacy</a>
+      </div>
+      <div class="ft-col"><h4>Get in touch</h4>
+        <a href="mailto:sales@nexunova.com">sales@nexunova.com</a>
+        <a href="mailto:support@nexunova.com">support@nexunova.com</a>
+        <a href="mailto:info@nexunova.com">info@nexunova.com</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 Nexunova. All rights reserved.</p>
+      <a href="https://rms.nexunova.com/login.html">Sign in to Nexunova RMS →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var h=document.getElementById('hdr');function s(){h.classList.toggle('scrolled',window.scrollY>8);}s();window.addEventListener('scroll',s,{passive:true});})();
+(function(){var b=document.getElementById('burger'),h=document.getElementById('hdr');if(!b)return;b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});document.getElementById('mobileNav').addEventListener('click',function(e){if(e.target.closest('a')){h.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body>
+</html>
