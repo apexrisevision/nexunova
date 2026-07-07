@@ -20,3 +20,6 @@ npm-debug.log*
 
 # Distributables — serve installers from GitHub Releases / rms., not the repo
 *.exe
+
+# Raw 2x product captures — only the optimized WebP in assets/shots/ ships
+marketing_shots/

@@ -8,14 +8,52 @@
 (function(){ try{ if(/Electron/i.test(navigator.userAgent||'')){ location.replace('https://rms.nexunova.com/login.html?nxn_legacy=1'); } }catch(e){} })();
 </script>
 
-<title>Nexunova RMS — Recovery &amp; Sales for Real Estate Developers</title>
-<meta name="description" content="Nexunova RMS turns overdue installments into collected cash. Recovery Radar, a sales pipeline your reps actually use, NexuBrief morning intelligence and a director's Command Center — one system for property developers.">
-<link rel="canonical" href="https://nexunova.com/rms">
-<meta property="og:title" content="Nexunova RMS — Recovery &amp; Sales for Real Estate Developers">
-<meta property="og:description" content="Turn overdue installments into collected cash. Recovery, sales pipeline, NexuBrief and Command Center — one system.">
-<meta property="og:url" content="https://nexunova.com/rms">
+<title>Installment Recovery &amp; Sales Software — Nexunova RMS</title>
+<meta name="description" content="Turn overdue installments into collected cash — Recovery Radar, a sales pipeline reps actually use, and a director's Command Center. Nexunova RMS.">
+<link rel="canonical" href="https://www.nexunova.com/rms">
+<meta property="og:site_name" content="Nexunova">
+<meta property="og:title" content="Installment Recovery &amp; Sales Software — Nexunova RMS">
+<meta property="og:description" content="Turn overdue installments into collected cash. Recovery Radar, a sales pipeline reps actually use, NexuBrief and a director's Command Center.">
+<meta property="og:url" content="https://www.nexunova.com/rms">
 <meta property="og:type" content="website">
+<meta property="og:image" content="https://www.nexunova.com/assets/shots/rms-dashboard.webp">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1067">
+<meta property="og:image:alt" content="Nexunova RMS director dashboard — total receivable, overdue trend and recovery intelligence">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Installment Recovery &amp; Sales Software — Nexunova RMS">
+<meta name="twitter:description" content="Turn overdue installments into collected cash. Recovery Radar, a sales pipeline reps actually use, NexuBrief and a Command Center.">
+<meta name="twitter:image" content="https://www.nexunova.com/assets/shots/rms-dashboard.webp">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Nexunova RMS",
+      "url": "https://www.nexunova.com/rms",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Installment recovery and sales software for real estate developers — Recovery Radar, a sales pipeline, NexuBrief morning intelligence and a director's Command Center.",
+      "offers": { "@type": "AggregateOffer", "priceCurrency": "PKR", "lowPrice": "0", "highPrice": "50000", "offerCount": "4" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nexunova",
+        "url": "https://www.nexunova.com/",
+        "logo": "https://www.nexunova.com/assets/icons/favicon-512x512.png"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nexunova.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Nexunova RMS", "item": "https://www.nexunova.com/rms" }
+      ]
+    }
+  ]
+}
+</script>
 
 <link rel="icon" type="image/x-icon" href="./assets/icons/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32x32.png">
@@ -109,11 +147,6 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .shot-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--border);background:var(--bg1)}
 .shot-bar .d{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.16)}
 .shot-bar .t{margin-left:6px;font-family:var(--mono);font-size:.74rem;font-weight:500;color:var(--muted)}
-.shot-ph{aspect-ratio:16/10;display:grid;place-content:center;justify-items:center;gap:9px;text-align:center;padding:24px;background:linear-gradient(135deg,#0A0E1A,#131A28)}
-.shot-ph svg{width:34px;height:34px;color:var(--cyan);opacity:.7}
-.shot-ph .lbl{font-family:var(--font-d);font-size:.95rem;font-weight:700;color:var(--white)}
-.shot-ph .meta{font-size:.78rem;color:var(--muted)}
-.shot-ph .file{font-family:var(--mono);font-size:.7rem;color:var(--faint);background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:6px;padding:3px 8px;margin-top:2px}
 .shot-img{width:100%;height:auto;display:block}
 
 /* alternating feature rows */
@@ -143,9 +176,9 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
 .mob{padding:80px 0;border-top:1px solid var(--border)}
 .mob .head{text-align:center;max-width:640px;margin:0 auto 44px}
 .mob .head h2{margin:12px 0 12px}
-.mob-row{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:760px;margin:0 auto}
+.mob-row{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:560px;margin:0 auto}
 .mshot{border:1px solid var(--border);border-radius:20px;overflow:hidden;box-shadow:var(--sh);background:var(--card)}
-.mshot .shot-ph{aspect-ratio:9/19}
+.mshot .shot-img{width:100%;height:auto}
 
 /* security strip */
 .sec{padding:88px 0;border-top:1px solid var(--border)}
@@ -237,13 +270,9 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
       <a href="https://rms.nexunova.com/signup.html?plan=free" class="btn btn-ghost" target="_blank" rel="noopener">Start free trial</a>
     </div>
-    <!-- SHOT SLOT → marketing_shots/rms-dashboard-light.png (1440×900 @2x) -->
     <figure class="shot">
       <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Nexunova RMS — Dashboard</span></div>
-      <div class="shot-ph" data-shot="rms-dashboard-light.png">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.1-3.1a2 2 0 0 0-2.8 0L6 21"/></svg>
-        <span class="lbl">RMS Dashboard</span><span class="meta">Real product screenshot</span><span class="file">rms-dashboard-light.png</span>
-      </div>
+      <img class="shot-img" src="./assets/shots/rms-dashboard.webp" width="1600" height="1067" alt="Nexunova RMS director dashboard showing total receivable, overdue trend and recovery intelligence" loading="eager" fetchpriority="high" decoding="async">
     </figure>
   </div>
 </section>
@@ -263,13 +292,9 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
         </ul>
       </div>
       <div class="shot-duo">
-        <!-- SHOT SLOT → marketing_shots/recovery-light.png -->
         <figure class="shot">
-          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Recovery</span></div>
-          <div class="shot-ph" data-shot="recovery-light.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
-            <span class="lbl">Recovery view</span><span class="meta">Real product screenshot</span><span class="file">recovery-light.png</span>
-          </div>
+          <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Recovery Position</span></div>
+          <img class="shot-img" src="./assets/shots/recovery.webp" width="1600" height="1067" alt="Recovery Position report with per-client aging buckets and recovery percentage" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
@@ -291,21 +316,13 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
         </ul>
       </div>
       <div class="shot-duo">
-        <!-- SHOT SLOT → marketing_shots/pipeline-light.png -->
         <figure class="shot">
           <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Leads — Pipeline</span></div>
-          <div class="shot-ph" data-shot="pipeline-light.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
-            <span class="lbl">Leads pipeline</span><span class="meta">Real product screenshot</span><span class="file">pipeline-light.png</span>
-          </div>
+          <img class="shot-img" src="./assets/shots/pipeline.webp" width="1600" height="1659" alt="Sales pipeline with stage-chip filters and lead cards showing source, project and value" loading="lazy" decoding="async">
         </figure>
-        <!-- SHOT SLOT → marketing_shots/lead-detail-light.png -->
         <figure class="shot">
           <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Lead detail</span></div>
-          <div class="shot-ph" data-shot="lead-detail-light.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg>
-            <span class="lbl">Lead detail</span><span class="meta">Real product screenshot</span><span class="file">lead-detail-light.png</span>
-          </div>
+          <img class="shot-img" src="./assets/shots/lead-detail.webp" width="1600" height="2283" alt="Lead detail with deal stage journey, next-action guidance and full activity timeline" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
@@ -327,13 +344,9 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
         </ul>
       </div>
       <div>
-        <!-- SHOT SLOT → marketing_shots/nexubrief-dark.png -->
         <figure class="shot">
           <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">NexuBrief — Morning Brief</span></div>
-          <div class="shot-ph" data-shot="nexubrief-dark.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8M4.93 10.93l1.41 1.41M2 18h2M20 18h2M17.66 12.34l1.41-1.41M22 22H2M16 18a4 4 0 0 0-8 0"/></svg>
-            <span class="lbl">NexuBrief message</span><span class="meta">Real product screenshot</span><span class="file">nexubrief-dark.png</span>
-          </div>
+          <img class="shot-img" src="./assets/shots/nexubrief.webp" width="1600" height="1067" alt="NexuBrief morning brief with headline facts and imperative Nexu Suggestions" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
@@ -355,21 +368,13 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
         </ul>
       </div>
       <div class="shot-duo">
-        <!-- SHOT SLOT → marketing_shots/command-center-light.png -->
         <figure class="shot">
           <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Command Center</span></div>
-          <div class="shot-ph" data-shot="command-center-light.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10h-10z"/><path d="M12 2v10l6.5 6.5"/></svg>
-            <span class="lbl">Command Center</span><span class="meta">Real product screenshot</span><span class="file">command-center-light.png</span>
-          </div>
+          <img class="shot-img" src="./assets/shots/command-center.webp" width="1600" height="1608" alt="CRM Command Center with live pipeline, follow-ups, first-response tracking and agent leaderboard" loading="lazy" decoding="async">
         </figure>
-        <!-- SHOT SLOT → marketing_shots/announcements-light.png -->
         <figure class="shot">
           <div class="shot-bar"><span class="d"></span><span class="d"></span><span class="d"></span><span class="t">Announcements</span></div>
-          <div class="shot-ph" data-shot="announcements-light.png">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg>
-            <span class="lbl">Announcements</span><span class="meta">Real product screenshot</span><span class="file">announcements-light.png</span>
-          </div>
+          <img class="shot-img" src="./assets/shots/announcements.webp" width="1600" height="1067" alt="Announcement with PDF attachment and per-person read receipts" loading="lazy" decoding="async">
         </figure>
       </div>
     </div>
@@ -385,10 +390,8 @@ em{font-style:normal;background:var(--grad);-webkit-background-clip:text;backgro
       <p class="lead">Reps log leads and payments from the field. Directors read NexuBrief on the move. The availability board is a tap away.</p>
     </div>
     <div class="mob-row">
-      <!-- SHOT SLOTS → marketing_shots/mobile-1.png / mobile-2.png / mobile-3.png -->
-      <figure class="mshot"><div class="shot-ph" data-shot="mobile-1.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-1.png</span></div></figure>
-      <figure class="mshot"><div class="shot-ph" data-shot="mobile-2.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-2.png</span></div></figure>
-      <figure class="mshot"><div class="shot-ph" data-shot="mobile-3.png"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg><span class="lbl">Mobile</span><span class="file">mobile-3.png</span></div></figure>
+      <figure class="mshot"><img class="shot-img" src="./assets/shots/mobile-1.webp" width="780" height="1688" alt="Nexunova mobile home for sales reps — month sold and to-collect KPIs with today's follow-ups" loading="lazy" decoding="async"></figure>
+      <figure class="mshot"><img class="shot-img" src="./assets/shots/mobile-2.webp" width="820" height="2919" alt="Nexunova mobile leads list with stage chips and per-lead status" loading="lazy" decoding="async"></figure>
     </div>
   </div>
 </section>
