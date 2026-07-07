@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><!-- KEEP on the template only. DELETE this line in your real post. -->
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HOW TO PUBLISH A NEW POST  (see BLOG_HOWTO.md for the full checklist)
+     1. Copy this file → rename to your-slug.html (lowercase-with-dashes)
+     2. Fill every  <!-- FILL: ... -->  below. The slug must match the filename.
+     3. Delete the noindex line above.
+     4. Paste the CARD snippet (bottom of this file) into blog/index.html
+     5. Paste the SITEMAP snippet (bottom of this file) into sitemap.xml
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<title><!-- FILL: title, max 60 chars --></title>
+<meta name="description" content="<!-- FILL: meta description, max 155 chars -->">
+<link rel="canonical" href="https://www.nexunova.com/blog/<!-- FILL: your-slug -->.html">
+<meta property="og:site_name" content="Nexunova">
+<meta property="og:title" content="<!-- FILL: title -->">
+<meta property="og:description" content="<!-- FILL: meta description -->">
+<meta property="og:url" content="https://www.nexunova.com/blog/<!-- FILL: your-slug -->.html">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://www.nexunova.com/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Nexunova — real estate management, recovery and sales software">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<!-- FILL: title -->">
+<meta name="twitter:description" content="<!-- FILL: meta description -->">
+<meta name="twitter:image" content="https://www.nexunova.com/assets/og-cover.jpg">
+
+<link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/blog.css?v=1">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BlogPosting",
+      "headline": "FILL: title",
+      "description": "FILL: meta description",
+      "image": "https://www.nexunova.com/assets/og-cover.jpg",
+      "datePublished": "FILL: YYYY-MM-DD",
+      "dateModified": "FILL: YYYY-MM-DD",
+      "author": { "@type": "Organization", "name": "Nexunova Team", "url": "https://www.nexunova.com/" },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Nexunova",
+        "url": "https://www.nexunova.com/",
+        "logo": "https://www.nexunova.com/assets/icons/favicon-512x512.png"
+      },
+      "mainEntityOfPage": "https://www.nexunova.com/blog/FILL-your-slug.html"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.nexunova.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.nexunova.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "FILL: title", "item": "https://www.nexunova.com/blog/FILL-your-slug.html" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+
+<header class="hdr" id="hdr">
+  <div class="container">
+    <div class="hdr-in">
+      <a href="/" class="brand" aria-label="Nexunova home"><span class="brand-mark">N</span>Nexunova</a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/rms">Nexunova RMS</a>
+        <a href="/#crm">Products</a>
+        <a href="/#rmsPricing">Pricing</a>
+        <a href="/blog/" class="active">Blog</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+      <div class="hdr-cta">
+        <a href="https://rms.nexunova.com/login.html" class="signin">Sign in</a>
+        <a href="/#contact" class="btn btn-primary btn-sm">Book a demo</a>
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/rms">Nexunova RMS</a>
+    <a href="/#crm">Products</a>
+    <a href="/#rmsPricing">Pricing</a>
+    <a href="/blog/">Blog</a>
+    <a href="/#contact">Contact</a>
+    <a href="https://rms.nexunova.com/login.html">Sign in</a>
+    <a href="/#contact" class="btn btn-primary">Book a demo</a>
+  </div>
+</header>
+
+<main class="main" id="main">
+  <article class="article">
+    <div class="container">
+      <div class="article-head">
+        <div class="crumb">
+          <a href="/">Home</a><span class="sep">›</span><a href="/blog/">Blog</a><span class="sep">›</span><!-- FILL: Category -->
+        </div>
+        <div class="a-meta">
+          <span class="tag"><!-- FILL: Category --></span><!-- add class="tag purple" for a purple tag -->
+          <span class="a-byline">By <strong>Nexunova Team</strong> · <!-- FILL: Month D, YYYY --> · <!-- FILL: N --> min read</span>
+        </div>
+        <h1><!-- FILL: the same title, as a single H1 (put your target keyword here) --></h1>
+      </div>
+
+      <div class="prose">
+        <!-- FILL: article body.
+             - First <p> is the intro; include your target keyword naturally in it.
+             - Use <h2> for sections, <h3> for sub-points.
+             - Use <ul>/<li>, <blockquote>, <strong> as needed. No fabricated stats. -->
+        <p>FILL: opening paragraph…</p>
+        <h2>FILL: section heading</h2>
+        <p>FILL…</p>
+      </div>
+
+      <aside class="cta-block">
+        <span class="eyebrow">See it in practice</span>
+        <h3><!-- FILL: one-line CTA headline tied to the article topic --></h3>
+        <p><!-- FILL: one supporting sentence --></p>
+        <div class="btn-row">
+          <a href="/rms" class="btn btn-primary btn-sm">See how Nexunova RMS handles this
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/#contact" class="btn btn-ghost btn-sm">Book a demo</a>
+        </div>
+      </aside>
+
+      <div class="more">
+        <h4>Keep reading</h4>
+        <!-- FILL: 2 links to other posts -->
+        <a href="/blog/how-to-reduce-overdue-installments-in-real-estate.html">How to Reduce Overdue Installments in Real Estate Projects →</a>
+        <a href="/blog/why-property-developers-lose-money-manual-sales-tracking.html">Why Property Developers Lose Money in Manual Sales Tracking →</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="ft">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a href="/" class="brand"><span class="brand-mark">N</span>Nexunova</a>
+        <p>Recovery and sales software for property developers and institutions across Pakistan, the Gulf, UK &amp; USA.</p>
+      </div>
+      <div class="ft-col"><h4>Products</h4>
+        <a href="/rms">Nexunova RMS</a>
+        <a href="https://attend.nexunova.com" target="_blank" rel="noopener">Nexunova Attend</a>
+        <a href="https://school.nexunova.com" target="_blank" rel="noopener">Nexunova School</a>
+      </div>
+      <div class="ft-col"><h4>Company</h4>
+        <a href="/blog/">Blog</a>
+        <a href="/#rmsPricing">Pricing</a>
+        <a href="/#contact">Contact</a>
+        <a href="/privacy">Privacy</a>
+      </div>
+      <div class="ft-col"><h4>Get in touch</h4>
+        <a href="mailto:sales@nexunova.com">sales@nexunova.com</a>
+        <a href="mailto:support@nexunova.com">support@nexunova.com</a>
+        <a href="mailto:info@nexunova.com">info@nexunova.com</a>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <p>© 2026 Nexunova. All rights reserved.</p>
+      <a href="https://rms.nexunova.com/login.html">Sign in to Nexunova RMS →</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var h=document.getElementById('hdr');function s(){h.classList.toggle('scrolled',window.scrollY>8);}s();window.addEventListener('scroll',s,{passive:true});})();
+(function(){var b=document.getElementById('burger'),h=document.getElementById('hdr');if(!b)return;b.addEventListener('click',function(){var o=h.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false');});document.getElementById('mobileNav').addEventListener('click',function(e){if(e.target.closest('a')){h.classList.remove('open');b.setAttribute('aria-expanded','false');}});})();
+</script>
+</body>
+</html>
+
+<!-- ══════════════════════════════════════════════════════════════════════
+     PASTE-IN SNIPPETS  (copy these into the two files, then edit)
+     ══════════════════════════════════════════════════════════════════════
+
+  ─── 1. CARD → paste at the TOP of the post list in blog/index.html ───
+      (just under the "POST CARDS — newest first" comment)
+
+      <article>
+        <a href="/blog/YOUR-SLUG.html" class="post-card">
+          <div class="pc-meta">
+            <span class="tag">Category</span>
+            <span class="pc-date">Month D, YYYY</span>
+          </div>
+          <h2>Your Post Title</h2>
+          <p>One-line excerpt that makes someone want to click.</p>
+          <span class="pc-read">Read article
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </article>
+
+  ─── 2. SITEMAP → paste inside <urlset> in sitemap.xml ───
+
+  <url>
+    <loc>https://www.nexunova.com/blog/YOUR-SLUG.html</loc>
+    <lastmod>YYYY-MM-DD</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+     ══════════════════════════════════════════════════════════════════════ -->
