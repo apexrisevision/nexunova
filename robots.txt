@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /mylove-ainee
 
 Sitemap: https://www.nexunova.com/sitemap.xml
